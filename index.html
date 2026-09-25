@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2026년 10월 리영어 뉴스레터 - 게임이 먼저가 아니라, 학습이 먼저입니다. 게이미피케이션의 본질과 Quest Hub 비전.">
+  <title>2026 OCTOBER · LE ENGLISH NEWSLETTER</title>
+  
+  <style>
+    /* --- CSS RESET & ROOT VARIABLES --- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-base: #FBF9F5;          /* Warm Editorial Ivory */
+      --bg-surface: #FFFFFF;       /* Clean White Surface */
+      --bg-card: #FFFFFF;          /* Pure White for Cards */
+      --bg-subtle: #F3EFEA;        /* Warm Neutral for accents/chips */
+      --bg-quote: #F7F4EE;         /* Quote & Note background */
+      
+      --text-main: #1E232A;        /* Premium Deep Charcoal */
+      --text-muted: #5C6470;       /* Muted Editorial Grey */
+      --text-light: #8792A2;       /* Subtle Label Grey */
+      
+      --accent-blue: #1E5088;      /* Calm Academic Blue */
+      --accent-blue-soft: #EBF2FA; /* Soft Blue Tint */
+      --accent-coral: #D9534F;     /* Restrained Coral Accent */
+      --accent-pink-soft: #FDF2F4;  /* Muted Pink Tint */
+      --border-subtle: #E8E3DC;    /* Gentle Editorial Border */
+      --border-strong: #D5CEC4;    /* Structural Border */
+      
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-pill: 9999px;
+      
+      --font-stack: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Segoe UI", Roboto, sans-serif;
+      --font-serif: "Batang", "KoPub Batang", "Nanum Myeongjo", serif;
+      
+      --max-w: 720px;
+    }
+
+    html {
+      font-size: 16px;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-stack);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* --- LAYOUT WRAPPER --- */
+    .newsletter-wrapper {
+      width: 100%;
+      max-width: var(--max-w);
+      padding: 0 20px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 480px) {
+      .newsletter-wrapper {
+        padding: 0 24px;
+      }
+    }
+
+    /* --- COMMON EDITORIAL TYPOGRAPHY & TAGS --- */
+    .section-spacing {
+      padding: 64px 0;
+    }
+
+    @media (min-width: 640px) {
+      .section-spacing {
+        padding: 88px 0;
+      }
+    }
+
+    .kicker {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 1.65rem;
+      font-weight: 800;
+      line-height: 1.35;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 640px) {
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    .body-p {
+      font-size: 1.025rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+
+    .body-p strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    /* Editorial Highlight Card */
+    .highlight-box {
+      background-color: var(--bg-surface);
+      border-left: 4px solid var(--accent-blue);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 24px 20px;
+      margin: 32px 0 24px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .highlight-box p {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .sub-note {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 64px 0 40px;
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--text-light);
+      margin-bottom: 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+      width: 100%;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+      margin-bottom: 24px;
+    }
+
+    .hero-title .accent-text {
+      color: var(--accent-blue);
+      display: inline-block;
+      position: relative;
+    }
+
+    .hero-lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      max-width: 580px;
+      margin-bottom: 32px;
+    }
+
+    .hero-principle-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background-color: var(--bg-subtle);
+      border-radius: var(--radius-pill);
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: 0.04em;
+      margin-bottom: 48px;
+    }
+
+    .hero-scroll-indicator {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+
+    .scroll-line {
+      width: 32px;
+      height: 1px;
+      background-color: var(--border-strong);
+    }
+
+    /* --- CARDS & MEDIA STYLES --- */
+    .media-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 36px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .media-card-img-wrap {
+      width: 100%;
+      background-color: #EFECE6;
+      position: relative;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .media-card-img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .media-card-content {
+      padding: 24px 20px;
+    }
+
+    @media (min-width: 480px) {
+      .media-card-content {
+        padding: 32px 28px;
+      }
+    }
+
+    .card-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background-color: var(--bg-subtle);
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .card-badge.badge-quest {
+      background-color: var(--accent-blue-soft);
+      color: var(--accent-blue);
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+
+    .card-subtitle {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .card-desc {
+      font-size: 0.975rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    /* ACTION BUTTONS */
+    .btn-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 52px;
+      padding: 14px 20px;
+      background-color: var(--text-main);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      transition: background-color 0.2s ease, transform 0.15s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-action:hover, .btn-action:focus-visible {
+      background-color: var(--accent-blue);
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+
+    .btn-action:active {
+      transform: scale(0.99);
+    }
+
+    .btn-subtext {
+      display: block;
+      font-size: 0.825rem;
+      color: var(--text-light);
+      margin-top: 12px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* --- CAROUSEL (SECTION 6: NON-GAME STORY LESSONS) --- */
+    .carousel-container {
+      position: relative;
+      margin: 28px -20px 0;
+      padding: 0 20px 20px;
+    }
+
+    @media (min-width: 480px) {
+      .carousel-container {
+        margin: 32px -24px 0;
+        padding: 0 24px 24px;
+      }
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 12px;
+      scrollbar-width: none;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-card {
+      flex: 0 0 84%;
+      max-width: 380px;
+      scroll-snap-align: start;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .carousel-card-img-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background-color: #EFECE6;
+      line-height: 0;
+      overflow: hidden;
+    }
+
+    .carousel-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .carousel-indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* --- SECTION: SCREEN OFF (TRANSITION / TURNING POINT) --- */
+    .section-screen-off {
+      background-color: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 80px 0;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .screen-off-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      font-weight: 800;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+
+    .screen-off-title {
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1.3;
+      color: var(--text-main);
+      margin-bottom: 32px;
+      letter-spacing: -0.02em;
+    }
+
+    .screen-off-questions {
+      max-width: 480px;
+      margin: 0 auto 36px;
+      text-align: left;
+      background-color: var(--bg-base);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+    }
+
+    .screen-off-questions p {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.9;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .screen-off-questions p:last-child {
+      margin-bottom: 0;
+    }
+
+    .screen-off-questions span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--accent-blue);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .screen-off-quote {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.55;
+      margin: 24px auto 44px;
+      max-width: 520px;
+    }
+
+    /* FLOW DIAGRAM */
+    .flow-diagram {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .flow-node {
+      width: 100%;
+      padding: 14px 20px;
+      background-color: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-pill);
+      font-size: 0.875rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--text-main);
+      text-align: center;
+    }
+
+    .flow-node.highlight-node {
+      background-color: var(--text-main);
+      color: #FFFFFF;
+      border-color: var(--text-main);
+    }
+
+    .flow-arrow {
+      color: var(--text-light);
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    /* --- QUOTE TYPOGRAPHY CARD --- */
+    .quote-card {
+      background-color: var(--bg-quote);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px 24px;
+      margin: 36px 0;
+      text-align: center;
+    }
+
+    .quote-text {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    @media (min-width: 640px) {
+      .quote-text {
+        font-size: 1.7rem;
+      }
+    }
+
+    .quote-source {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* --- INFO CARD: CLASSROOM RATIO & SCREEN USAGE --- */
+    .info-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      margin: 36px 0;
+    }
+
+    .info-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .info-card-header svg {
+      width: 24px;
+      height: 24px;
+      color: var(--accent-blue);
+      flex-shrink: 0;
+    }
+
+    .info-card-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .info-balance-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    @media (min-width: 520px) {
+      .info-balance-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .balance-item {
+      background-color: var(--bg-base);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .balance-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .balance-val {
+      font-size: 0.925rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* --- FEEDBACK CHAT BUBBLES --- */
+    .chat-bubble-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 32px 0;
+    }
+
+    .chat-bubble {
+      align-self: flex-start;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px 18px 18px 4px;
+      padding: 14px 20px;
+      font-size: 0.975rem;
+      color: var(--text-main);
+      line-height: 1.6;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      max-width: 90%;
+    }
+
+    .chat-bubble:nth-child(2) {
+      align-self: flex-end;
+      border-radius: 18px 18px 4px 18px;
+      background-color: var(--accent-blue-soft);
+      border-color: #D4E3F5;
+      color: var(--accent-blue);
+    }
+
+    .chat-bubble:nth-child(3) {
+      align-self: flex-start;
+      border-radius: 18px 18px 18px 4px;
+      background-color: var(--accent-pink-soft);
+      border-color: #F8DDE3;
+      color: #9E374D;
+    }
+
+    .feedback-flow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-pill);
+      padding: 12px 18px;
+      margin: 28px 0;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+
+    .feedback-flow span.active-node {
+      color: var(--accent-blue);
+    }
+
+    /* --- QUEST HUB (VISION SECTION) --- */
+    .quest-hub-section {
+      background-color: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 72px 0;
+      margin: 40px 0;
+    }
+
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 32px 0 40px;
+    }
+
+    @media (min-width: 520px) {
+      .hub-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .hub-mini-card {
+      background-color: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .hub-mini-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hub-mini-card-img-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      line-height: 0;
+      background-color: #EFECE6;
+    }
+
+    .hub-mini-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hub-mini-card-label {
+      padding: 10px 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--text-main);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .hub-vision-banner {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(180deg, #FDFDFE 0%, #F5F7FA 100%);
+      border: 1px dashed var(--border-strong);
+      border-radius: var(--radius-lg);
+      margin-bottom: 36px;
+    }
+
+    .hub-badge-coming-soon {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background-color: var(--text-main);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+    }
+
+    .hub-vision-title {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--text-main);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .hub-core-rule {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--accent-blue);
+      line-height: 1.5;
+      margin: 32px 0;
+      padding: 24px 20px;
+      background-color: var(--accent-blue-soft);
+      border-radius: var(--radius-md);
+      text-align: center;
+    }
+
+    /* QUEST HUB ARCHITECTURE DIAGRAM */
+    .hub-arch-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 480px;
+      margin: 32px auto 0;
+    }
+
+    @media (min-width: 600px) {
+      .hub-arch-flow {
+        flex-direction: row;
+        gap: 8px;
+        align-items: stretch;
+      }
+    }
+
+    .hub-arch-step {
+      flex: 1;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 14px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hub-arch-step .step-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--accent-blue);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .hub-arch-step .step-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+
+    .hub-arch-sep {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+
+    @media (min-width: 600px) {
+      .hub-arch-sep {
+        transform: rotate(-90deg);
+      }
+    }
+
+    /* --- CLOSING SECTION --- */
+    .closing-section {
+      padding: 72px 0 100px;
+      text-align: center;
+    }
+
+    .closing-body {
+      text-align: left;
+      margin-bottom: 48px;
+    }
+
+    .final-credo-card {
+      background-color: var(--text-main);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 44px 24px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .final-credo-card p {
+      font-size: 1.15rem;
+      line-height: 1.85;
+      font-weight: 600;
+      color: #E2E8F0;
+      margin-bottom: 12px;
+    }
+
+    .final-credo-card p strong {
+      color: #FFFFFF;
+      font-weight: 800;
+    }
+
+    .closing-brand {
+      margin-top: 48px;
+    }
+
+    .closing-brand-name {
+      font-size: 1.4rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .closing-brand-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+    }
+
+    .closing-date {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* --- EDITORIAL REVEAL ANIMATION --- */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .hub-mini-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="newsletter-wrapper">
+
+    <!-- ==========================================
+         01 HERO SECTION
+         ========================================== -->
+    <header class="hero">
+      <div class="hero-meta">
+        2026 OCTOBER · LE ENGLISH NEWSLETTER
+      </div>
+      <h1 class="hero-title">
+        게임이 먼저가 아니라,<br>
+        <span class="accent-text">학습이 먼저입니다.</span>
+      </h1>
+      <p class="hero-lead">
+        필요한 순간에 게임을 켜고,<br>
+        다시 실제 영어로 돌아옵니다.
+      </p>
+      <div class="hero-principle-badge">
+        <span>GAME ≠ GOAL</span>
+      </div>
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span>SCROLL TO READ</span>
+      </div>
+    </header>
+
+    <main>
+      <!-- ==========================================
+           02 SECTION: 왜 게임을 사용할까요?
+           ========================================== -->
+      <section class="section-spacing reveal-item" aria-labelledby="sec-why">
+        <span class="kicker">WHY GAMIFICATION?</span>
+        <h2 id="sec-why" class="section-title">왜 게임을 사용할까요?</h2>
+        
+        <p class="body-p">
+          영어 학습에는 반복이 필요합니다.
+        </p>
+        <p class="body-p">
+          알파벳의 소리도, 새로운 단어도, 동사의 변화도, 처음 만나는 문장 구조도 한 번 설명했다고 바로 자기 것이 되지는 않습니다. 같은 것을 여러 번 만나고, 직접 선택하고, 틀려 보고, 다시 해보는 시간이 필요합니다.
+        </p>
+        <p class="body-p">
+          게이미피케이션은 게임의 요소를 게임이 아닌 학습 과정에 활용하는 방법입니다. 여러 교육 연구에서도 게이미피케이션은 학습자의 참여와 반복, 학습 성과에 평균적으로 긍정적인 효과가 보고되어 왔습니다.
+        </p>
+        <p class="body-p">
+          하지만 게임이라고 해서 자동으로 공부가 되는 것은 아닙니다. <strong>어떤 내용을, 언제, 얼마나 반복하고, 그 경험을 실제 읽기·말하기·쓰기로 어떻게 연결하느냐</strong>가 더 중요합니다.
+        </p>
+
+        <div class="highlight-box">
+          <p>“리영어가 게임을 사용하는 이유도 바로 이 ‘반복’에 있습니다.”</p>
+        </div>
+
+        <p class="sub-note">
+          게임은 수업을 대신하지 않습니다. 필요한 반복을 담당하는 하나의 학습 도구입니다.
+        </p>
+      </section>
+
+      <!-- ==========================================
+           03 SECTION: 첫 번째 사례
+           ========================================== -->
+      <section class="section-spacing reveal-item" aria-labelledby="sec-first-case">
+        <span class="kicker">FROM LEARNING TO PLAY</span>
+        <h2 id="sec-first-case" class="section-title">
+          게임에서 수업을 찾지 않습니다.<br>
+          수업에서 필요한 게임을 찾습니다.
+        </h2>
+        
+        <p class="body-p">
+          리영어의 게임은 먼저 게임을 만들고 아이들에게 시키는 방식으로 시작하지 않습니다. 수업을 하다가 <strong>“지금 이 아이에게 무엇을 반복해야 할까?”</strong>라는 필요가 생기면 그 학습목표에 맞는 방법을 찾습니다.
+        </p>
+
+        <!-- 5-1: image1.png (Editorial Image) -->
+        <article class="media-card" style="margin-top: 36px;">
+          <div class="media-card-img-wrap">
+            <img src="image1.png" alt="알파벳 소리 연구소 학습 교재 삽화" width="720" height="450">
+          </div>
+          <div class="media-card-content">
+            <span class="card-badge">LEARNING WORLD · PHONICS</span>
+            <h3 class="card-title">이름은 A, 그런데 소리는?</h3>
+            <p class="card-desc">
+              파닉스를 시작한 아이들에게 알파벳의 ‘이름’과 단어 속에서 실제로 나는 ‘소리’가 다르다는 것은 생각보다 큰 첫 관문입니다. 그래서 먼저 「알파벳 소리 연구소」라는 세계에서 이름과 소리의 차이를 만나봅니다.
+            </p>
+          </div>
+        </article>
+
+        <!-- 5-2: image2.png (Playable Quest 01) -->
+        <article class="media-card">
+          <div class="media-card-img-wrap">
+            <img src="image2.png" alt="소리 나는 키캡 가게 게임 화면" width="720" height="450" loading="lazy">
+          </div>
+          <div class="media-card-content">
+            <span class="card-badge badge-quest">PLAYABLE QUEST · CVC</span>
+            <h3 class="card-title">소리 나는 키캡 가게</h3>
+            <p class="card-desc">
+              이제 직접 눌러보고, 듣고, 이어봅니다. 알파벳의 음가를 듣고 키캡을 선택하고, C-A-T처럼 소리를 이어 하나의 단어로 만드는 과정을 반복합니다.
+            </p>
+            <a href="https://dydfl1016.github.io/Keycap0002/" target="_blank" rel="noopener noreferrer" class="btn-action">
+              🎮 소리 나는 키캡 가게 체험하기
+            </a>
+            <span class="btn-subtext">
+              학부모님도 아이들이 어떤 방식으로 소리를 반복하고 연결하는지 가볍게 체험해 보세요.
+            </span>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==========================================
+           04 SECTION: 모든 수업을 게임으로 만들지는 않습니다
+           ========================================== -->
+      <section class="section-spacing reveal-item" aria-labelledby="sec-not-all-games">
+        <h2 id="sec-not-all-games" class="section-title">
+          모든 수업을<br>
+          게임으로 만들지는 않습니다.
+        </h2>
+        
+        <p class="body-p">
+          어떤 개념은 이야기와 그림으로 만나는 것이 좋고, 어떤 개념은 종이에 직접 써보는 것이 좋고, 어떤 개념은 움직임을 영상으로 보는 것이 좋습니다.
+        </p>
+        <p class="body-p">
+          그리고 반복해서 선택하고, 움직이고, 다시 시도하는 경험이 필요한 순간에는 게임을 사용합니다.
+        </p>
+        <p class="body-p">
+          리영어가 선택하는 것은 ‘게임이냐 아니냐’가 아니라, <strong>“지금 이 학습에 어떤 방식이 가장 필요한가”</strong>입니다.
+        </p>
+
+        <!-- Carousel: image3, image4, image5 (Non-playable story lessons) -->
+        <div class="carousel-container">
+          <div class="carousel-track" role="region" aria-label="이야기와 그림 기반 수업 사례">
+            
+            <!-- Card 1: image3.png -->
+            <article class="carousel-card">
+              <div class="carousel-card-img-wrap">
+                <img src="image3.png" alt="타임머신 타고 과거로 교재 그림" width="380" height="240" loading="lazy">
+              </div>
+              <div class="carousel-card-body">
+                <span class="card-badge">STORY LESSON</span>
+                <h3 class="card-title" style="font-size: 1.15rem;">타임머신 타고 과거로!</h3>
+                <div class="card-subtitle">PAST TENSE · 과거형</div>
+                <p class="card-desc" style="font-size: 0.9rem; margin-bottom: 0;">
+                  현재의 동사가 과거로 이동하며 -ed를 만나 변화하는 모습을 이야기로 경험합니다.
+                </p>
+              </div>
+            </article>
+
+            <!-- Card 2: image4.png -->
+            <article class="carousel-card">
+              <div class="carousel-card-img-wrap">
+                <img src="image4.png" alt="과거에서 현재로 순간이동 교재 그림" width="380" height="240" loading="lazy">
+              </div>
+              <div class="carousel-card-body">
+                <span class="card-badge">STORY &amp; VIDEO LESSON</span>
+                <h3 class="card-title" style="font-size: 1.15rem;">과거에서 현재로 순간이동!</h3>
+                <div class="card-subtitle">PRESENT PERFECT · HAVE + P.P.</div>
+                <p class="card-desc" style="font-size: 0.9rem; margin-bottom: 0;">
+                  과거의 경험과 현재를 연결하는 현재완료의 시간 감각을 이야기와 영상으로 만납니다.
+                </p>
+              </div>
+            </article>
+
+            <!-- Card 3: image5.png -->
+            <article class="carousel-card">
+              <div class="carousel-card-img-wrap">
+                <img src="image5.png" alt="주인공이 바뀌었어 수동태 교재 그림" width="380" height="240" loading="lazy">
+              </div>
+              <div class="carousel-card-body">
+                <span class="card-badge">LEARNING WORLD</span>
+                <h3 class="card-title" style="font-size: 1.15rem;">주인공이 바뀌었어!</h3>
+                <div class="card-subtitle">PASSIVE VOICE · 수동태</div>
+                <p class="card-desc" style="font-size: 0.9rem; margin-bottom: 0;">
+                  능동태와 수동태의 차이를 ‘문장의 주인공이 바뀐다’는 이미지로 먼저 경험합니다.
+                </p>
+              </div>
+            </article>
+
+          </div>
+          <div class="carousel-indicator" aria-hidden="true">
+            <span>← 옆으로 넘겨보세요 →</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           05 SECTION: PLAYABLE QUESTS (image9, 7, 8, 6)
+           ========================================== -->
+      <section class="section-spacing reveal-item" aria-labelledby="sec-quests">
+        <span class="kicker">LE ENGLISH · PLAYABLE QUESTS</span>
+        <h2 id="sec-quests" class="section-title">
+          수업에서 필요한 순간,<br>
+          Quest가 열립니다.
+        </h2>
+        
+        <p class="body-p">
+          낯선 문법 이름부터 외우기보다 먼저 보고, 움직이고, 선택하고, 반복합니다. 충분히 익숙해진 뒤에는 학교 교과서와 시험에서 사용하는 정확한 문법 용어와 규칙도 함께 연결합니다.
+        </p>
+
+        <div class="highlight-box" style="margin-bottom: 40px;">
+          <p>“감각을 먼저 만들고, 이름은 나중에 정확하게 붙입니다.”</p>
+        </div>
+
+        <!-- QUEST 02: image9.png -->
+        <article class="media-card">
+          <div class="media-card-img-wrap">
+            <img src="image9.png" alt="무인 인형 뽑기방 게임 화면" width="720" height="450" loading="lazy">
+          </div>
+          <div class="media-card-content">
+            <span class="card-badge badge-quest">QUEST 02 · VOCABULARY</span>
+            <h3 class="card-title">무인 인형 뽑기방</h3>
+            <p class="card-desc">
+              단어를 한 번 보고 외우는 대신, 게임 속에서 여러 번 만나고 선택하며 자연스럽게 반복합니다.
+            </p>
+            <a href="https://dydfl1016.github.io/Dollpickshop00004/" target="_blank" rel="noopener noreferrer" class="btn-action">
+              🧸 무인 인형 뽑기방 체험하기
+            </a>
+          </div>
+        </article>
+
+        <!-- QUEST 03: image7.png -->
+        <article class="media-card">
+          <div class="media-card-img-wrap">
+            <img src="image7.png" alt="세 자매 변신 페스티벌 불규칙동사 게임 화면" width="720" height="450" loading="lazy">
+          </div>
+          <div class="media-card-content">
+            <span class="card-badge badge-quest">QUEST 03 · IRREGULAR VERBS</span>
+            <h3 class="card-title">세 자매 변신 페스티벌</h3>
+            <p class="card-desc">
+              동사원형 → 과거형 → 과거분사.<br>
+              서로 다른 모습으로 변신하는 ‘세 자매’의 이미지와 함께 불규칙동사의 세 형태를 반복해서 만납니다.
+            </p>
+            <a href="https://dydfl1016.github.io/Verbfestival00/" target="_blank" rel="noopener noreferrer" class="btn-action">
+              👑 세 자매 변신 페스티벌 체험하기
+            </a>
+          </div>
+        </article>
+
+        <!-- QUEST 04: image8.png -->
+        <article class="media-card">
+          <div class="media-card-img-wrap">
+            <img src="image8.png" alt="요술봉을 휘두르면 비교급 최상급 게임 화면" width="720" height="450" loading="lazy">
+          </div>
+          <div class="media-card-content">
+            <span class="card-badge badge-quest">QUEST 04 · COMPARATIVE &amp; SUPERLATIVE</span>
+            <h3 class="card-title">요술봉을 휘두르면!</h3>
+            <p class="card-desc">
+              형용사에 요술봉을 휘두르며 비교급과 최상급으로 변화시키는 과정을 통해 형태 변화의 규칙을 반복합니다.
+            </p>
+            <a href="https://dydfl1016.github.io/Magicwand00/" target="_blank" rel="noopener noreferrer" class="btn-action">
+              🪄 요술봉을 휘두르면! 체험하기
+            </a>
+          </div>
+        </article>
+
+        <!-- QUEST 05: image6.png -->
+        <article class="media-card">
+          <div class="media-card-img-wrap">
+            <img src="image6.png" alt="꼬리표 마트 관계대명사 게임 화면" width="720" height="450" loading="lazy">
+          </div>
+          <div class="media-card-content">
+            <span class="card-badge badge-quest">QUEST 05 · RELATIVE CLAUSE</span>
+            <h3 class="card-title">꼬리표 마트</h3>
+            <p class="card-desc">
+              물건에 설명 꼬리표를 붙이듯 the banana + that is yellow를 연결합니다. 관계대명사 that을 공식보다 먼저 ‘명사 뒤에 설명을 붙이는 감각’으로 경험합니다.
+            </p>
+            <a href="https://dydfl1016.github.io/Tagmart00/" target="_blank" rel="noopener noreferrer" class="btn-action">
+              🏷️ 꼬리표 마트 체험하기
+            </a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div><!-- /.newsletter-wrapper -->
+
+  <!-- ==========================================
+       06 SECTION: SCREEN OFF (Turning Point)
+       Full width background break
+       ========================================== -->
+  <section class="section-screen-off reveal-item" aria-labelledby="sec-screen-off">
+    <div class="newsletter-wrapper">
+      <span class="screen-off-label">QUEST COMPLETE</span>
+      <h2 id="sec-screen-off" class="screen-off-title">
+        그리고 우리는<br>화면을 끕니다.
+      </h2>
+      
+      <p class="body-p" style="text-align: center; max-width: 520px; margin: 0 auto 28px;">
+        게임에서 잘했다고 학습이 끝난 것은 아닙니다.
+      </p>
+
+      <div class="screen-off-questions">
+        <p><span class="dot"></span> 종이 카드에서도 읽을 수 있을까?</p>
+        <p><span class="dot"></span> 처음 보는 단어에서도 할 수 있을까?</p>
+        <p><span class="dot"></span> 문장 안에서도 알아볼 수 있을까?</p>
+        <p><span class="dot"></span> 직접 말하고 쓸 수 있을까?</p>
+      </div>
+
+      <div class="screen-off-quote">
+        “게임의 점수는 학습의 끝이 아니라,<br>확인의 시작입니다.”
+      </div>
+
+      <!-- CSS FLOW DIAGRAM -->
+      <div class="flow-diagram" aria-label="학습 전환 흐름도">
+        <div class="flow-node">LEARN</div>
+        <div class="flow-arrow" aria-hidden="true">↓</div>
+        <div class="flow-node">PLAY</div>
+        <div class="flow-arrow" aria-hidden="true">↓</div>
+        <div class="flow-node highlight-node">SCREEN OFF</div>
+        <div class="flow-arrow" aria-hidden="true">↓</div>
+        <div class="flow-node">READ · SPEAK · WRITE</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="newsletter-wrapper">
+    <!-- ==========================================
+         07 SECTION: 10,000포인트보다 중요했던 것
+         ========================================== -->
+    <section class="section-spacing reveal-item" aria-labelledby="sec-points">
+      <h2 id="sec-points" class="section-title">
+        10,000포인트보다<br>중요했던 것
+      </h2>
+      
+      <p class="body-p">
+        한 학생이 소리 나는 키캡 게임에서 10,000포인트를 넘겼습니다. 하지만 제가 보고 싶었던 것은 게임의 점수가 아니었습니다.
+      </p>
+      <p class="body-p">
+        화면을 끄고 실물 CVC 단어 카드를 꺼냈습니다. 게임에서 반복했던 소리를 종이 카드에서도 읽을 수 있는지, 처음 보는 단어에도 적용할 수 있는지 다시 확인했습니다.
+      </p>
+      <p class="body-p">
+        그리고 짧은 글을 함께 읽으려던 순간, 아이가 말했습니다.
+      </p>
+
+      <div class="quote-card">
+        <div class="quote-text">
+          “선생님, 읽지 마세요.<br>제가 읽어볼게요.”
+        </div>
+        <div class="quote-source">리영어 교실의 실제 수업 중에서</div>
+      </div>
+
+      <p class="body-p">
+        리영어가 보고 싶은 변화는 게임을 얼마나 오래 했는지가 아니라, <strong>게임에서 연습한 것을 게임 없이도 할 수 있게 되는 순간</strong>입니다.
+      </p>
+
+      <!-- 10. 수업 시간과 화면 사용에 대한 안내 CARD -->
+      <aside class="info-card">
+        <div class="info-card-header">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <h3 class="info-card-title">게임은 수업 전체가 아닙니다</h3>
+        </div>
+        <p class="body-p" style="font-size: 0.95rem; margin-bottom: 0;">
+          Quest는 필요한 개념을 손에 익히기 위해 짧게 집중해서 사용하는 학습 도구입니다. 수업의 중심은 여전히 종이 교재를 읽고, 소리 내어 말하고, 직접 쓰고, 교사와 함께 확인하는 활동입니다.
+        </p>
+        <div class="info-balance-grid">
+          <div class="balance-item">
+            <div class="balance-label">GAME</div>
+            <div class="balance-val">반복을 돕는 도구</div>
+          </div>
+          <div class="balance-item">
+            <div class="balance-label">CLASSROOM</div>
+            <div class="balance-val">실제 수행을 확인하는 공간</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ==========================================
+         08 SECTION: 아이들도 Quest 제작에 참여합니다
+         ========================================== -->
+    <section class="section-spacing reveal-item" aria-labelledby="sec-cocreation">
+      <h2 id="sec-cocreation" class="section-title">
+        게임은<br>선생님 혼자 만들지 않습니다.
+      </h2>
+      
+      <p class="body-p">
+        게임을 수업에서 사용하기 시작하면서 재미있는 일이 생겼습니다. 아이들이 단순한 사용자가 아니라 게임에 대한 의견을 내기 시작했습니다.
+      </p>
+
+      <!-- Chat Bubbles -->
+      <div class="chat-bubble-container" aria-label="아이들의 실제 피드백 대화">
+        <div class="chat-bubble">“선생님, 여기 조금 불편해요.”</div>
+        <div class="chat-bubble">“이 버튼 누르면 랜덤 박스 나오게 하면 안 돼요?”</div>
+        <div class="chat-bubble">“슬랑이 키캡도 만들어 주세요.”</div>
+      </div>
+
+      <p class="body-p">
+        아이들은 자신들이 요즘 즐기는 게임을 보여주기도 하고, 어떤 버튼이 편한지, 어떤 기능이 재미있는지 알려주기도 합니다. 때로는 불편했던 점이나 추가하고 싶은 기능을 노트에 직접 적어 보여줍니다.
+      </p>
+      <p class="body-p">
+        그렇게 아이들의 피드백을 받아 Quest도 수업과 함께 조금씩 달라집니다.
+      </p>
+
+      <!-- Flow: PLAY -> FEEDBACK -> UPDATE -> PLAY -->
+      <div class="feedback-flow" aria-label="피드백 선순환 흐름">
+        <span class="active-node">PLAY</span>
+        <span aria-hidden="true">→</span>
+        <span>FEEDBACK</span>
+        <span aria-hidden="true">→</span>
+        <span>UPDATE</span>
+        <span aria-hidden="true">→</span>
+        <span class="active-node">PLAY</span>
+      </div>
+
+      <div class="highlight-box">
+        <p>아이들은 수업의 소비자에 머물지 않고, 자신들이 배우는 방법에도 목소리를 냅니다.</p>
+      </div>
+    </section>
+  </div><!-- /.newsletter-wrapper -->
+
+  <!-- ==========================================
+       09 & 10 SECTION: QUEST HUB — COMING SOON
+       Full width surface break
+       ========================================== -->
+  <section class="quest-hub-section reveal-item" aria-labelledby="sec-hub">
+    <div class="newsletter-wrapper">
+      <span class="kicker">VISION &amp; FUTURE</span>
+      <h2 id="sec-hub" class="section-title">
+        그리고 어느 순간 보니,<br>
+        하나둘 쌓여 있었습니다.
+      </h2>
+
+      <!-- Mini Card Collection: image2, image9, image7, image8, image6 -->
+      <div class="hub-grid" id="hubCardsGrid" aria-label="리영어 Quest 컬렉션 미리보기">
+        <div class="hub-mini-card">
+          <div class="hub-mini-card-img-wrap">
+            <img src="image2.png" alt="KEYCAP" width="200" height="200" loading="lazy">
+          </div>
+          <div class="hub-mini-card-label">KEYCAP</div>
+        </div>
+        <div class="hub-mini-card">
+          <div class="hub-mini-card-img-wrap">
+            <img src="image9.png" alt="DOLLPICK" width="200" height="200" loading="lazy">
+          </div>
+          <div class="hub-mini-card-label">DOLLPICK</div>
+        </div>
+        <div class="hub-mini-card">
+          <div class="hub-mini-card-img-wrap">
+            <img src="image7.png" alt="VERB FESTIVAL" width="200" height="200" loading="lazy">
+          </div>
+          <div class="hub-mini-card-label">VERB FESTIVAL</div>
+        </div>
+        <div class="hub-mini-card">
+          <div class="hub-mini-card-img-wrap">
+            <img src="image8.png" alt="MAGIC WAND" width="200" height="200" loading="lazy">
+          </div>
+          <div class="hub-mini-card-label">MAGIC WAND</div>
+        </div>
+        <div class="hub-mini-card">
+          <div class="hub-mini-card-img-wrap">
+            <img src="image6.png" alt="TAG MART" width="200" height="200" loading="lazy">
+          </div>
+          <div class="hub-mini-card-label">TAG MART</div>
+        </div>
+      </div>
+
+      <div class="hub-vision-banner">
+        <span class="hub-badge-coming-soon">COMING SOON</span>
+        <div style="font-size: 0.8rem; font-weight: 800; letter-spacing: 0.12em; color: var(--text-light); margin-bottom: 8px;">
+          5 PLAYABLE QUESTS AND MORE TO COME
+        </div>
+        <div class="hub-vision-title">
+          LE ENGLISH QUEST HUB
+        </div>
+      </div>
+
+      <p class="body-p">
+        Quest Hub는 아직 완성된 서비스가 아닙니다.
+      </p>
+      <p class="body-p">
+        지금까지 리영어 수업에서 필요에 따라 하나씩 만들어 온 작은 Quest들이 있습니다. 앞으로 이 Quest들을 하나의 공간에 모아, 아이들이 지금 배우고 있는 내용에 필요한 Quest를 만나고 필요한 만큼 연습할 수 있도록 확장해 나가려고 합니다.
+      </p>
+
+      <div class="highlight-box">
+        <p>“Quest Hub는 게임을 모아놓은 게임방이 아닙니다.”</p>
+        <p style="font-size: 1rem; font-weight: 500; color: var(--text-muted); margin-top: 10px;">
+          수업에서 발견한 학습목표에 따라 지금 필요한 Quest를 만나고, 충분히 익숙해지면 다시 게임 밖의 영어로 돌아오는 리영어의 학습 허브입니다.
+        </p>
+      </div>
+
+      <div class="hub-core-rule">
+        아이를 게임의 진도에 맞추지 않습니다.<br><br>
+        <strong>게임이 아이의 학습 진도를 따라갑니다.</strong>
+      </div>
+
+      <!-- QUEST HUB ARCHITECTURE DIAGRAM -->
+      <div class="hub-arch-flow" aria-label="Quest Hub 연계 학습 구조">
+        <div class="hub-arch-step">
+          <div class="step-tag">STEP 1</div>
+          <div class="step-title"><strong>CLASSROOM</strong><br>수업에서 학습목표 발견</div>
+        </div>
+        <div class="hub-arch-sep" aria-hidden="true">↓</div>
+        <div class="hub-arch-step">
+          <div class="step-tag">STEP 2</div>
+          <div class="step-title"><strong>QUEST ON</strong><br>필요한 만큼 반복</div>
+        </div>
+        <div class="hub-arch-sep" aria-hidden="true">↓</div>
+        <div class="hub-arch-step">
+          <div class="step-tag">STEP 3</div>
+          <div class="step-title"><strong>QUEST OFF</strong><br>화면을 끄고</div>
+        </div>
+        <div class="hub-arch-sep" aria-hidden="true">↓</div>
+        <div class="hub-arch-step" style="background-color: var(--accent-blue-soft);">
+          <div class="step-tag" style="color: var(--accent-blue);">GOAL</div>
+          <div class="step-title"><strong>REAL ENGLISH</strong><br>READ · SPEAK · WRITE</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       11 SECTION: CLOSING
+       ========================================== -->
+  <div class="newsletter-wrapper">
+    <footer class="closing-section reveal-item" aria-labelledby="sec-closing">
+      <div class="closing-body">
+        <p class="body-p">
+          처음에는 수업 중 이런 질문을 듣곤 했습니다.
+        </p>
+
+        <div class="quote-card" style="margin: 24px 0;">
+          <div class="quote-text" style="font-size: 1.3rem;">
+            “선생님, 영어는 왜 배워야 돼요?”
+          </div>
+        </div>
+
+        <p class="body-p">
+          그리고 저는 아이들에게 말했습니다.
+        </p>
+        <p class="body-p" style="padding-left: 16px; border-left: 2px solid var(--border-strong); color: var(--text-main);">
+          “지금 다 이해하려고 하지 말고, 먼저 익숙해지자.<br>
+          선생님이 계속 반복해 줄게.”
+        </p>
+        <p class="body-p">
+          그렇게 이야기와 교재가 생기고, 필요한 곳에는 작은 게임들이 생겼습니다.
+        </p>
+        <p class="body-p">
+          그리고 요즘은 교실에 들어오며 이렇게 묻는 아이가 있습니다.
+        </p>
+
+        <div class="quote-card" style="margin: 24px 0; background-color: var(--accent-blue-soft);">
+          <div class="quote-text" style="color: var(--accent-blue); font-size: 1.3rem;">
+            “선생님, 오늘은 또 뭐 만들었어요?”
+          </div>
+        </div>
+      </div>
+
+      <div class="final-credo-card">
+        <p>게임이 먼저가 아니라,<br><strong>학습이 먼저입니다.</strong></p>
+        <p style="margin-top: 16px;">게임에서 수업을 찾지 않습니다.<br><strong>수업에서 필요한 게임을 찾습니다.</strong></p>
+        <p style="margin-top: 16px;">필요한 순간에 게임을 켜고,<br><strong>다시 실제 영어로 돌아옵니다.</strong></p>
+      </div>
+
+      <div class="closing-brand">
+        <div class="closing-brand-name">LE ENGLISH</div>
+        <div class="closing-brand-sub">딱 보면 아는 영어</div>
+        <div class="closing-date">2026 OCTOBER NEWSLETTER</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ==========================================
+       VANILLA JAVASCRIPT
+       - Soft reveal animation on scroll
+       - Sequential card animation for Quest Hub
+       ========================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check prefers-reduced-motion
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) {
+        document.querySelectorAll('.reveal-item').forEach(el => el.classList.add('is-visible'));
+        document.querySelectorAll('.hub-mini-card').forEach(el => el.classList.add('revealed'));
+        return;
+      }
+
+      // Intersection Observer for Section Reveal
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.1
+      });
+
+      document.querySelectorAll('.reveal-item').forEach(el => {
+        revealObserver.observe(el);
+      });
+
+      // Staggered reveal for Quest Hub mini cards
+      const hubGrid = document.getElementById('hubCardsGrid');
+      if (hubGrid) {
+        const hubObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const cards = entry.target.querySelectorAll('.hub-mini-card');
+              cards.forEach((card, index) => {
+                setTimeout(() => {
+                  card.classList.add('revealed');
+                }, index * 80);
+              });
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.2
+        });
+
+        hubObserver.observe(hubGrid);
+      }
+    });
+  </script>
+</body>
+</html>
